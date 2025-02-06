@@ -3,7 +3,7 @@
 <p>I like the rain sound.what about you?</p>
 <p>I decided to add a music player to rainy page.of course music files can be fetched from server.You can have your playlist.Hope you enjoy 😊</p>
 
-![Image](https://github.com/user-attachments/assets/ba13778a-17cb-4b2b-9a40-06320e8a861b)
+![Image](https://github.com/user-attachments/assets/074df01a-ed95-442c-b63b-6ab60ff64fe5)
 
 
 
