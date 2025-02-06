@@ -1,7 +1,7 @@
 ## Rainy Player
 
 <p>I like the rain sound.what about you?</p>
-<p>I decided to add a music player to rainy page.of course music files can be fetched from server.You can have your playlist.Hope you enjoy 😊</p>
+<p>I decided to add a music player to rainy page.of course music files can be fetched from server.Hope you enjoy 😊</p>
 
 ![Image](https://github.com/user-attachments/assets/074df01a-ed95-442c-b63b-6ab60ff64fe5)
 
