@@ -1,0 +1,499 @@
+@font-face {
+  font-family: nexa;
+  src: url(../font/Nexa-ExtraLight.ttf);
+}
+@font-face {
+  font-family: nexabold;
+  src: url(../font/Nexa-Heavy.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  background-color: #181616;
+  /* background-image: url(image/6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.root {
+  z-index: -1000;
+  width: 100vw;
+  height: 100vh;
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 5px;
+  background: white;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: white;
+  height: 5px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: white;
+  height: 5px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  height: 5px;
+}
+
+.player-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* place-items: center; */
+  > h2 {
+    font-family: "Oswald", serif;
+    color: rgba(255, 255, 255, 0.781);
+    margin: 0;
+    font-size: 15px;
+    /* margin-top: 20px; */
+  }
+  > h3 {
+    font-family: "Oswald", serif;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.781);
+    letter-spacing: 0.7rem;
+    text-shadow: 0px 3px 12px white;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  > .linkbox {
+    display: flex;
+    gap: 20px;
+    > a {
+      color: rgba(255, 255, 255, 0.781);
+      font-size: 20px;
+      transition: 0.3s;
+      &:hover {
+        text-shadow: 0px 3px 12px white;
+      }
+    }
+  }
+  > .player {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    /* height: 500px; */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 0.63) 0%,
+      rgba(36, 50, 67, 0.63) 21%,
+      rgba(80, 115, 108, 0.63) 99%
+    );
+    border-radius: 18px;
+    box-shadow: 0 0 10px #1a2a39;
+    /* margin-top: 20px; */
+    > h2 {
+      font-family: "Oswald", serif;
+      color: rgba(255, 255, 255, 0.781);
+      margin-bottom: 0;
+    }
+    > h3 {
+      font-family: "Oswald", serif;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.781);
+      margin-top: 2px;
+    }
+    .music-player {
+      position: relative;
+      width: 270px;
+      height: 270px;
+      > .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+        > .progress-background {
+          fill: none;
+          stroke: #dddddd5b;
+          stroke-width: 5;
+          cursor: pointer;
+        }
+        > .progress-circle {
+          fill: none;
+          stroke: #f4a2616e;
+          stroke-width: 5;
+          stroke-dasharray: 816.8;
+          stroke-dashoffset: 816.8;
+          transition: stroke-dashoffset 0.5s linear;
+          cursor: pointer;
+        }
+      }
+      > .music-label {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        /* background: url(image/baroon-delam-khast.jpg) no-repeat center/cover; */
+        top: 10px;
+        left: 10px;
+        opacity: 0.5;
+        overflow: hidden;
+        > figure {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    span {
+      opacity: 0.5;
+      transition: 0.4s;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    > .play-icons {
+      position: relative;
+      width: 100%;
+      /* border: 1px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      color: white;
+      margin-top: 10px;
+
+      > span.icon-play-circle2,
+      span.icon-pause-circled {
+        font-size: 50px;
+      }
+      > span.icon-to-end,
+      span.icon-to-start {
+        font-size: 30px;
+      }
+      > span.icon-heart {
+        position: absolute;
+        right: 20px;
+        font-size: 22px;
+      }
+      > span.icon-minus-circled {
+        font-size: 22px;
+        position: absolute;
+        left: 20px;
+      }
+    }
+    > .other-icons {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      margin-top: 10px;
+      font-size: 1rem;
+      padding: 10px 0;
+      > div.volume {
+        position: relative;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid white; */
+
+        > input[type="range"]#volume {
+          position: absolute;
+          width: 60px;
+          top: -24px;
+          left: -20px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.3s;
+        }
+        &:hover {
+          > input#volume {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      > span:last-of-type {
+        font-size: 14px;
+      }
+      > span:not(:last-of-type) {
+        font-size: 20px;
+      }
+      > span.icon-volume-up,
+      span.icon-volume-off-1 {
+        /* border: 1px solid black; */
+        position: relative;
+        > input {
+          position: absolute;
+          left: -26px;
+          width: 80px;
+          bottom: 26px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.4s;
+        }
+        &:hover {
+          > input {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+    > .playlist {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      height: 100%;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 0, 36, 0.8) 0%,
+        rgba(36, 50, 67, 0.8) 21%,
+        rgba(80, 115, 108, 0.8) 99%
+      );
+      transition: 0.5s ease;
+      > span.icon-down-open {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        margin-top: 20px;
+      }
+      > ul {
+        list-style: none;
+        color: white;
+        font-size: 18px;
+        padding: 0 10px;
+        > li {
+          /* border: 1px solid black; */
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 5px;
+          cursor: pointer;
+          &:hover {
+            > span {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.top-0 {
+  top: 0 !important;
+}
+
+.rain-player {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  > .rainbox {
+    /* should rotate */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../image/rain\ text\ whtie.png);
+    background-size: cover;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+    animation: rotation 15s linear infinite;
+  }
+  > span {
+    position: absolute;
+    z-index: 1;
+    font-size: 100px;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  > input[type="range"] {
+    padding-top: 20px;
+    background-color: transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 90px;
+    font-size: 20px;
+    /* margin-top: 8px; */
+    transition: 0.6s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:hover {
+    > input {
+      opacity: 0.5;
+      visibility: visible;
+    }
+  }
+
+  > p {
+    margin-top: 5px;
+    font-family: "Oswald", serif;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media screen and (max-width: 812px) {
+  .rain-player {
+    bottom: auto;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+
+.liked {
+  color: red !important;
+  opacity: 1 !important;
+}
+
+/* signature  */
+
+.wrapper {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  padding: 20px;
+}
+
+.image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.wrapper:hover .image-container {
+  transform: scale(1.1);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.icon-links {
+  position: absolute;
+  left: -23px;
+  top: 44%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  transition-duration: 0.4s;
+  z-index: 600;
+}
+
+.wrapper:hover .icon-links {
+  display: flex;
+}
+
+.icon-links a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-links a:hover {
+  transform: scale(1.2);
+  color: #ffdd57;
+}
+
+.icon-links a:nth-child(1),
+.icon-links a:nth-child(3) {
+  margin-left: 10px;
+}
+
+.icon-links a:nth-child(2) {
+  margin-left: -5px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rainy Player</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/fontello.css" />
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <audio class="rainPlayer" src="" controls hidden></audio> -->
+    <div class="root">
+      <canvas id="canvas"> </canvas>
+      <div class="player-container">
+        <!-- rain player -->
+        <div class="rain-player">
+          <div class="rainbox"></div>
+          <span class="material-symbols-outlined"> play_circle </span>
+          <input id="range" type="range" min="0" max="100" value="99" />
+          <!-- <p>Rain makes everything better.</p> -->
+        </div>
+
+        <!-- audio section -->
+        <audio
+          class="musicPlayer"
+          src="audio/01 Baroon Delam Khast - Shadmehr Aghili.mp3"
+          controls
+          type="audio/mpeg"
+          hidden
+        ></audio>
+        <div class="player">
+          <h2>Baroon delam khast</h2>
+          <h3>shadmehr</h3>
+          <div class="music-player">
+            <svg class="progress-ring" width="270" height="270">
+              <circle
+                class="progress-background"
+                cx="135"
+                cy="135"
+                r="130"
+              ></circle>
+              <circle
+                class="progress-circle"
+                cx="135"
+                cy="135"
+                r="130"
+              ></circle>
+            </svg>
+            <div class="music-label">
+              <figure style="width: 100%">
+                <img
+                  src="image/labels/baroon-delam-khast.jpg"
+                  width="100%"
+                  height="100%"
+                  alt=""
+                />
+              </figure>
+            </div>
+          </div>
+          <div class="play-icons">
+            <span class="icon-to-start"></span>
+            <span class="play-pause icon-play-circle2"></span>
+            <span class="icon-to-end"></span>
+            <span class="icon-heart"></span>
+            <span class="icon-minus-circled"></span>
+          </div>
+          <div class="other-icons">
+            <span class="icon-shuffle"></span>
+            <span class="icon-th-list" title="Playlist"></span>
+            <div class="volume">
+              <input type="range" id="volume" min="0" max="100" value="50" />
+              <span class="icon-volume-up" id="playerVolume"> </span>
+            </div>
+            <span class="icon-cw" id="replay"></span>
+          </div>
+          <section class="playlist">
+            <span class="icon-down-open" id="closePlayList"></span>
+            <ul></ul>
+          </section>
+        </div>
+        <h2>Developed By :</h2>
+        <h3>Mohamad Mokaram</h3>
+        <div class="linkbox">
+          <a
+            href="https://www.linkedin.com/in/mohamad-mokaram-05b873200/"
+            target="_blank"
+          >
+            <span class="icon-linkedin-squared"></span>
+          </a>
+          <a
+            href="https://www.instagram.com/mokaram_frontdeveloper/"
+            target="_blank"
+          >
+            <span class="icon-instagram"></span>
+          </a>
+          <a href="https://github.com/mohamadmokarram" target="_blank">
+            <span class="icon-github-circled"></span>
+          </a>
+        </div>
+
+        <!-- signature -->
+        <div class="wrapper">
+          <div class="image-container">
+            <a href="#">
+              <img src="image/black&white-profile.jpg" alt="Your Image" />
+            </a>
+            <div class="icon-links">
+              <a
+                href="https://www.instagram.com/mokaram_frontdeveloper/"
+                target="_blank"
+                ><span class="icon-instagram"></span
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/mohamad-mokaram-05b873200/"
+                target="_blank"
+                ><span class="icon-linkedin-squared"></span
+              ></a>
+              <a href="https://github.com/mohamadmokarram" target="_blank"
+                ><span class="icon-github-circled"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="bundle/script.js"></script>
+    <script src="bundle/index.js"></script>
+  </body>
+</html>
