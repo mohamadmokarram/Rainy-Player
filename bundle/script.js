@@ -225,9 +225,9 @@ function playRain() {
   }
 }
 
-rainSound.addEventListener("timeupdate", e => {
-  console.log(e.timeStamp);
-});
+// rainSound.addEventListener("timeupdate", e => {
+//   console.log(e.timeStamp);
+// });
 
 rainSound.addEventListener("ended", () => {
   rianBtn.innerHTML = " play_circle ";
