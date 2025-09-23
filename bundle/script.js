@@ -271,3 +271,9 @@ function checkLike(trackId) {
   }
   console.log(data);
 }
+
+//if we have errors, lets see:
+window.addEventListener("error", function (e) {
+  console.log("Error:", e.error);
+  alert("Error: " + e.error.message);
+});
