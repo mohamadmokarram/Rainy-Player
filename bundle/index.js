@@ -1,4 +1,4 @@
-var RaindropFX = (() => {
+export let RaindropFX = (() => {
   var ur = Object.defineProperty;
   var Hi = Object.getOwnPropertyDescriptor;
   var Wi = (t, e) => () => (
@@ -8625,3 +8625,4 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 //# sourceMappingURL=index.js.map
+

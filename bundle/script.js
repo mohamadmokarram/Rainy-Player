@@ -1,3 +1,4 @@
+import { RaindropFX } from "./index.js";
 const canvas = document.getElementById("canvas");
 const progressCircle = document.querySelector(".progress-circle");
 const progressRing = document.querySelector(".progress-ring");
