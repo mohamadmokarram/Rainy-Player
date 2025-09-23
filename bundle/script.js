@@ -19,6 +19,7 @@ const rainVolume = document.querySelector(".rain-player input");
 const playerVolumeIcon = document.getElementById("playerVolume");
 const replayIcon = document.getElementById("replay");
 const likeIcon = document.querySelector(".icon-heart");
+const rainPlayer = document.querySelector(".rain-player");
 
 let data;
 let isReplayActive = false;
@@ -50,7 +51,7 @@ window.onresize = () => {
   const rect = canvas.getBoundingClientRect();
   rainDropFx.resize(rect.width, rect.height);
 };
-// rainDropFx.start();
+rainDropFx.start();
 
 const circleLength = 2 * Math.PI * 130;
 
@@ -98,12 +99,16 @@ volumeInput.addEventListener("input", () => {
   musicPlayer.volume = updatedVolume;
 });
 
+//opening playList
 playListIcon.addEventListener("click", () => {
   playList.classList.toggle("top-0");
+  rainPlayer.style["z-index"] = "0";
 });
 
+//closing playList
 closeBtnPlayList.addEventListener("click", () => {
   playList.classList.toggle("top-0");
+  rainPlayer.style["z-index"] = "10";
 });
 
 //change track function:
@@ -156,6 +161,7 @@ async function readData() {
       changeTrack(trackId);
       activeTrackIndex = trackId;
       musicPlayer.play();
+      rainPlayer.style["z-index"] = "10";
     });
   });
 
