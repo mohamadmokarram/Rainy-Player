@@ -50,7 +50,7 @@ window.onresize = () => {
   const rect = canvas.getBoundingClientRect();
   rainDropFx.resize(rect.width, rect.height);
 };
-rainDropFx.start();
+// rainDropFx.start();
 
 const circleLength = 2 * Math.PI * 130;
 
