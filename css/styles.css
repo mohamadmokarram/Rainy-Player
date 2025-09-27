@@ -140,7 +140,7 @@ div.player {
   align-items: center;
   width: 300px;
   /* height: 500px; */
-  background: rgb(2, 0, 36);
+  /* background: rgb(2, 0, 36); */
   background: linear-gradient(
     0deg,
     rgba(2, 0, 36, 0.63) 0%,
@@ -400,17 +400,14 @@ section.playlist {
     opacity: 0;
     visibility: hidden;
   }
-  &:hover {
-    > input {
-      opacity: 0.5;
-      visibility: visible;
-    }
-  }
-
   > p {
     margin-top: 5px;
     font-family: "Oswald", serif;
   }
+}
+
+div.player > h2 {
+  text-align: center;
 }
 
 @keyframes rotation {
@@ -525,5 +522,41 @@ section.playlist {
     span {
       font-size: 80px;
     }
+  }
+}
+
+@media (max-width: 575px) {
+  div.player {
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 0.342) 0%,
+      rgba(36, 50, 67, 0.329) 21%,
+      rgba(80, 115, 108, 0.37) 99%
+    );
+  }
+}
+
+@media (hover: hover) {
+  div.volume:hover > input#volume {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .rain-player:hover input {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}
+
+@media (hover: none) and (max-width: 575px) {
+  div.player-container .rain-player input {
+    width: 7px;
+    height: 100px;
+    opacity: 0.5;
+    visibility: visible;
+    left: -14px;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: #fff;
   }
 }

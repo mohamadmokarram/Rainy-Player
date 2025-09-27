@@ -215,7 +215,7 @@ prevBtn.addEventListener("click", () => {
   console.log("active track index :", activeTrackIndex);
 });
 
-////////////////////////////////////////////////   Rain   sound /////////////////
+//////////////////////  Rain  sound ///////////////////
 
 const rainSound = new Audio("audio/Classic Thunderstorm.mp3");
 console.log(rainSound);
@@ -282,4 +282,11 @@ function checkLike(trackId) {
 window.addEventListener("error", function (e) {
   console.log("Error:", e.error);
   alert("Error: " + e.error.message);
+});
+
+//check mobile for vertical range bar
+window.addEventListener("load", () => {
+  if (innerWidth < 575) {
+    rainVolume.setAttribute("orient", "vertical");
+  }
 });
