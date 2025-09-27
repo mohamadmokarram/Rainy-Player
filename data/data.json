@@ -4,8 +4,8 @@
     "title": "Baroon Delam khast",
     "artist": "Shadmehr",
     "labelAddress": "image/labels/baroon-delam-khast.jpg",
-    "fileAddress": "audio/01 Baroon Delam Khast - Shadmehr Aghili.mp3",
-    "trackDuration": "3:42",
+    "fileAddress": "https://mehrdl.musitraf.com/Music/A/B/New/Shadmehr%20Aghili%20-%20Baroon%20Delam%20Khast%20(128).mp3",
+    "trackDuration": "3:27",
     "liked": false
   },
   {
@@ -22,7 +22,7 @@
     "title": "Breath",
     "artist": "Jesse Cook",
     "labelAddress": "image/labels/breath-jesse-cook.jpg",
-    "fileAddress": "audio/03 Breath - Jesse Cook.mp3",
+    "fileAddress": "https://dl5.songsara.net/FRE/12/Jesse%20Cook%20-%20Love%20in%20the%20Time%20of%20Covid%20(2023)%20SONGSARA.NET/13%20Breath%20(Rerecorded).mp3",
     "trackDuration": "2:43",
     "liked": false
   },
@@ -31,8 +31,35 @@
     "title": "Divoonegi",
     "artist": "Sirvan Khosravi",
     "labelAddress": "image/labels/divoonegi-sirvan.jpg",
-    "fileAddress": "audio/04 Sirvan Khosravi - Divoonegi (128).mp3",
-    "trackDuration": "4:27",
+    "fileAddress": "https://dl.rozmusic.com/Music/1400/04/26/Sirvan%20Khosravi%20-%20Divoonegi%20%28128%29.mp3",
+    "trackDuration": "4:28",
+    "liked": false
+  },
+  {
+    "id": 5,
+    "title": "Beneath the Weight of Missed Dreams",
+    "artist": "Martin Czerny",
+    "labelAddress": "https://songsara.net/wp-content/uploads/2025/09/Beneath-the-Weight-of-Missed-Dreams-Martin-Czerny-400x400.jpg",
+    "fileAddress": "https://dl6.songsara.net/FRE/17/Martin Czerny - Beneath the Weight of Missed Dreams (2025) SONGSARA.NET.mp3",
+    "trackDuration": "3:09",
+    "liked": false
+  },
+  {
+    "id": 6,
+    "title": "Joy",
+    "artist": "Yiruma",
+    "labelAddress": "https://songsara.net/wp-content/uploads/2024/10/Kiss-The-Rain-Yiruma-400x400.jpg",
+    "fileAddress": "https://dl6.songsara.net/FRE/11/Yiruma%20-%20Kiss%20The%20Rain%20(2024)%20SONGSARA.NET/02%20Joy.mp3",
+    "trackDuration": "4:03",
+    "liked": false
+  },
+  {
+    "id": 7,
+    "title": "Hale Baroon",
+    "artist": "Reza Sadeghi",
+    "labelAddress": "https://newsong.ir/wp-content/uploads/2017/09/2016-07-19_224504-3-300x274.jpg",
+    "fileAddress": "https://dl.rozmusic.com/Music/1396/03/04/Reza%20Sadeghi%20-%20Hale%20Baroon%20(128).mp3",
+    "trackDuration": "4:03",
     "liked": false
   }
 ]
